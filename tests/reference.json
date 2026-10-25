@@ -1,0 +1,58 @@
+{
+  "id": "E126",
+  "value": 1.4014285714285715,
+  "value_high_precision": "1.4014285714285714285714285714285714285714285714285714285714285714285714285714286",
+  "method": "Independent Python Decimal arithmetic at 80 significant digits; Taylor series for sine and arcsine, Decimal exp/sqrt, separate physical balance or geometry. No JavaScript imports.",
+  "cases": [
+    {
+      "name": "balanced hanging masses exact zero",
+      "values": {
+        "mone": 3,
+        "mtwo": 3
+      },
+      "expected": 0.0
+    },
+    {
+      "name": "inertia-free pulley limit",
+      "values": {
+        "inertia": 0
+      },
+      "expected": 1.962
+    },
+    {
+      "name": "mass swap reverses acceleration",
+      "values": {
+        "mone": 3,
+        "mtwo": 2
+      },
+      "expected": -1.4014285714285715
+    },
+    {
+      "name": "additional pulley inertia reduces acceleration",
+      "values": {
+        "inertia": 0.07
+      },
+      "expected": 0.8175
+    },
+    {
+      "name": "near-balanced large masses retain the mass difference",
+      "values": {
+        "mone": 1000000000000000,
+        "mtwo": 1000000000000001,
+        "inertia": 0
+      },
+      "expected": 4.9049999999999975e-15
+    },
+    {
+      "name": "underflowing intermediate pulley ratio recovers finite acceleration",
+      "values": {
+        "mone": 1e+300,
+        "mtwo": 2e+300,
+        "inertia": 1e-300,
+        "radius": 1e-300,
+        "gravity": 10
+      },
+      "expected": 2.5
+    }
+  ]
+}

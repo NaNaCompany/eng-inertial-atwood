@@ -1,0 +1,80 @@
+{
+  "id": "E126",
+  "slug": "eng-inertial-atwood",
+  "title": "관성 도르래 애트우드 가속도 계산기",
+  "title_en": "Atwood acceleration with pulley inertia calculator",
+  "category": "역학·재료",
+  "category_en": "Mechanics and materials",
+  "fields": [
+    {
+      "key": "mone",
+      "label": "첫 추 질량 m₁",
+      "label_en": "First hanging mass m₁",
+      "dimension": "mass",
+      "example": 2,
+      "constraint": "positive",
+      "display_unit": "kg",
+      "display_value": "2"
+    },
+    {
+      "key": "mtwo",
+      "label": "둘째 추 질량 m₂",
+      "label_en": "Second hanging mass m₂",
+      "dimension": "mass",
+      "example": 3,
+      "constraint": "positive",
+      "display_unit": "kg",
+      "display_value": "3"
+    },
+    {
+      "key": "inertia",
+      "label": "도르래 축 관성모멘트 I",
+      "label_en": "Pulley-axis moment of inertia I",
+      "dimension": "massInertia",
+      "example": 0.02,
+      "constraint": "nonnegative",
+      "display_unit": "kgm2",
+      "display_value": "0.02"
+    },
+    {
+      "key": "radius",
+      "label": "로프 접촉 반지름 r",
+      "label_en": "Rope contact radius r",
+      "dimension": "length",
+      "example": 0.1,
+      "constraint": "positive",
+      "display_unit": "m",
+      "display_value": "0.10000000000000001"
+    },
+    {
+      "key": "gravity",
+      "label": "중력가속도 g",
+      "label_en": "Gravitational acceleration g",
+      "dimension": "acceleration",
+      "example": 9.81,
+      "constraint": "positive",
+      "display_unit": "ms2",
+      "display_value": "9.8100000000000005"
+    }
+  ],
+  "result_label": "둘째 추가 아래로 향할 때 양수인 가속도 a",
+  "result_label_en": "Acceleration a, positive when mass 2 descends",
+  "result_dimension": "acceleration",
+  "formula": "a = (m₂ − m₁)g / (m₁ + m₂ + I/r²)",
+  "purpose": "두 개의 매달린 추와 회전 관성이 있는 도르래로 이루어진 애트우드 장치의 가속도를 계산합니다.",
+  "purpose_en": "Compute the acceleration of two hanging masses connected over a pulley with rotational inertia.",
+  "assumptions": "로프는 질량이 없고 늘어나지 않으며 도르래에서 미끄러지지 않습니다. 축 마찰·공기저항을 무시하고 두 추는 자유롭게 움직입니다. 출력의 양수는 둘째 추의 하강, 음수는 첫 추의 하강입니다. I=0은 이상적인 무관성 도르래의 극한입니다.",
+  "assumptions_en": "Required: a massless inextensible rope, no slip at the pulley, freely moving hanging masses, and negligible axle friction and air drag. Positive acceleration means mass 2 descends; negative means mass 1 descends. I = 0 gives the ideal inertia-free pulley limit.",
+  "sources": [
+    {
+      "label": "UC San Diego — rotational dynamics and Atwood machine",
+      "url": "https://courses.physics.ucsd.edu/2007/Fall/physics2aa/documents/Lecture21-2A.pdf"
+    }
+  ],
+  "condition": "로프의 무질량·비신장·미끄럼 없음과 축 마찰 무시 조건을 확인했습니다.",
+  "condition_en": "I confirm a massless inextensible nonslipping rope and negligible axle friction.",
+  "site": "https://nanalab.kr/eng-inertial-atwood/",
+  "repository": "https://github.com/NaNaCompany/eng-inertial-atwood",
+  "groups": [],
+  "output_unit": "ms2"
+}
